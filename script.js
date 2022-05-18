@@ -13,7 +13,13 @@ function downloadHandler(event) {
 
     
     const temp = [];
-    customers.forEach(customer => temp.push(`   <group-assignment group-id="${groupId.value}" customer-no="${customer}" />\n`));
+    customers.forEach(function(i, idx, arr){
+        if(idx === arr.length - 1) {
+            temp.push(`   <group-assignment group-id="${groupId.value}" customer-no="${i}" />`)
+        } else {
+            temp.push(`   <group-assignment group-id="${groupId.value}" customer-no="${i}" />\n`);
+        }
+    })
 
     console.log(temp)
 
