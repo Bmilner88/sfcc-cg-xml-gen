@@ -3,6 +3,10 @@ const createButton = document.querySelector('#create-btn');
 function downloadHandler(event) {
     event.preventDefault();
 
+    if(document.querySelector('#download')) {
+        document.querySelector('#download').remove();
+    }
+
     const groupId = document.querySelector('#group-id');
     const customers = document.querySelector('#customer-num').value.split('\n');
 
@@ -10,7 +14,6 @@ function downloadHandler(event) {
         alert('Please fill out form')
         return;
     };
-
     
     const temp = [];
     customers.forEach(function(i, idx, arr){
@@ -35,6 +38,7 @@ ${temp.join('')}
     let download = document.createElement('a');
     let bb = new Blob([xmltext], {type: 'text/plain'});
 
+    download.setAttribute('id', 'download')
     download.setAttribute('href', window.URL.createObjectURL(bb));
     download.setAttribute('download', filename);
     download.innerText = 'Click here to download';
