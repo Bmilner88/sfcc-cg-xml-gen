@@ -2,6 +2,7 @@ const createButton = document.querySelector('#create-btn');
 
 function downloadHandler(event) {
     event.preventDefault();
+    event.stopPropagation();
 
     if(document.querySelector('#download')) {
         document.querySelector('#download').remove();
@@ -15,16 +16,14 @@ function downloadHandler(event) {
         return;
     };
     
-    const temp = [];
+    const customerArray = [];
     customers.forEach(function(i, idx, arr){
         if(idx === arr.length - 1) {
-            temp.push(`   <group-assignment group-id="${groupId.value}" customer-no="${i}" />`)
+            customerArray.push(`   <group-assignment group-id="${groupId.value}" customer-no="${i}" />`)
         } else {
-            temp.push(`   <group-assignment group-id="${groupId.value}" customer-no="${i}" />\n`);
-        }
-    })
-
-    console.log(temp)
+            customerArray.push(`   <group-assignment group-id="${groupId.value}" customer-no="${i}" />\n`);
+        };
+    });
 
     const filename = `${groupId.value}.xml`;
     const xmltext = `<?xml version="1.0" encoding="UTF-8"?>
@@ -32,7 +31,7 @@ function downloadHandler(event) {
 <customer-group group-id="${groupId.value}">
 <custom-attributes/>
 </customer-group>
-${temp.join('')}
+${customerArray.join('')}
 </customer-groups>   
 `
     let download = document.createElement('a');
