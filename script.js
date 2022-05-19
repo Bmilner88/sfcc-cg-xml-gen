@@ -40,7 +40,7 @@ ${customerArray.join('')}
     download.setAttribute('id', 'download')
     download.setAttribute('href', window.URL.createObjectURL(bb));
     download.setAttribute('download', filename);
-    download.innerText = 'Click here to download';
+    download.innerText = `Click here to download ${filename}`;
 
     download.dataset.downloadurl = ['text/plain', download.download, download.href].join(':');
     download.draggable = true; 
