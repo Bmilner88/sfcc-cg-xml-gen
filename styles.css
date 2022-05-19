@@ -1,14 +1,3 @@
-label, textarea {
-    display:flex;
-    flex-direction:column;
-    align-content: center;
-}
-
-#group-id {
-    width: 250px;
-}
-
 #customer-num {
     height: 402px;
-    width: 250px;
 }

@@ -48,7 +48,7 @@ ${temp.join('')}
     download.draggable = true; 
     download.classList.add('dragout');
 
-    document.body.appendChild(download)
+    document.querySelector('#xml-form').appendChild(download);
 };
  
 document.querySelector('#xml-form').addEventListener('submit', downloadHandler);
