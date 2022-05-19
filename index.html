@@ -5,20 +5,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./styles.css">
     <title>Posh XML Creation</title>
 </head>
 <body>
-    <form id="xml-form">
-            <label for="group-id">Group ID</label>
-            <textarea id="group-id"></textarea>
-
-            <label for="customer-num">Customer ID List</label>
-            <textarea id="customer-num"></textarea>
-
-            <button id="create-btn">Create</button>
-
-    </form>
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <div class="card">
+                        <form id="xml-form" class="column is-center">
+                            <div class="field">
+                                <label for="group-id">Group ID</label>
+                                <div class="control">
+                                    <textarea class="textarea" id="group-id" placeholder="e.g. CONS-RWDS-aprrotm-5"></textarea>
+                                </div>
+                            </div>
+    
+                            <div class="field">
+                                <label for="customer-num" class="text-center">Customer ID List</label>
+                                <div class="control">
+                                    <textarea class="textarea" id="customer-num"></textarea>
+                                </div>
+                            </div>
+    
+                            <button class="button is-dark" id="create-btn">Create</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <script src="./script.js"></script>
 </body>
 </html>

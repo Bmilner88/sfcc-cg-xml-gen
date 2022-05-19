@@ -3,6 +3,10 @@ const createButton = document.querySelector('#create-btn');
 function downloadHandler(event) {
     event.preventDefault();
 
+    if(document.querySelector('#download')) {
+        document.querySelector('#download').remove();
+    };
+
     const groupId = document.querySelector('#group-id');
     const customers = document.querySelector('#customer-num').value.split('\n');
 
@@ -37,13 +41,14 @@ ${temp.join('')}
 
     download.setAttribute('href', window.URL.createObjectURL(bb));
     download.setAttribute('download', filename);
+    download.setAttribute('id', 'download');
     download.innerHTML = `Click here to download <strong>${filename}</strong>`;
 
     download.dataset.downloadurl = ['text/plain', download.download, download.href].join(':');
     download.draggable = true; 
     download.classList.add('dragout');
 
-    document.body.appendChild(download)
+    document.querySelector('#xml-form').appendChild(download);
 };
  
 document.querySelector('#xml-form').addEventListener('submit', downloadHandler);
