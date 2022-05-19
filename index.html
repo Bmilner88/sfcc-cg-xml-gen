@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./styles.css">
     <title>Posh XML Creation</title>
 </head>
 <body>
-    <form id="xml-form">
-        <div>
-            <label for="group-id">Group ID</label>
-            <textarea id="group-id"></textarea>
-        </div>
-        <div>
-            <label for="customer-num">Customer ID List</label>
-            <textarea id="customer-num"></textarea>
-        </div>
-        <div>
-            <button id="create-btn">Create</button>
-            <script src="./script.js"></script>
-        </div>
-    </form>
-    
+    <div class="container">
+            <div id="xml-form">
+                <div>
+                    <label for="group-id">Group ID</label>
+                    <textarea id="group-id"></textarea>
+                </div>
+                <div>
+                    <label for="customer-num">Customer ID List</label>
+                    <textarea id="customer-num"></textarea>
+                </div>
+                <div>
+                    <button id="create-btn">Create</button>
+                    <script src="./script.js"></script>
+                </div>
+            </div>
+    </div>
 </body>
 </html>
