@@ -11,7 +11,7 @@ function downloadHandler(event) {
     const customers = document.querySelector('#customer-num').value.split('\n');
 
     if(!groupId.value || !customers.length) {
-        alert('Please fill out form')
+        alert('Please fill out form');
         return;
     };
 
@@ -19,13 +19,11 @@ function downloadHandler(event) {
     const temp = [];
     customers.forEach(function(i, idx, arr){
         if(idx === arr.length - 1) {
-            temp.push(`   <group-assignment group-id="${groupId.value}" customer-no="${i}" />`)
+            temp.push(`   <group-assignment group-id="${groupId.value}" customer-no="${i}" />`);
         } else {
             temp.push(`   <group-assignment group-id="${groupId.value}" customer-no="${i}" />\n`);
         }
-    })
-
-    console.log(temp)
+    });
 
     const filename = `${groupId.value}.xml`;
     const xmltext = `<?xml version="1.0" encoding="UTF-8"?>
@@ -34,7 +32,7 @@ function downloadHandler(event) {
 <custom-attributes/>
 </customer-group>
 ${temp.join('')}
-</customer-groups>   
+</customer-groups>
 `
     let download = document.createElement('a');
     let bb = new Blob([xmltext], {type: 'text/plain'});
@@ -50,5 +48,5 @@ ${temp.join('')}
 
     document.querySelector('#xml-form').appendChild(download);
 };
- 
+
 document.querySelector('#xml-form').addEventListener('submit', downloadHandler);
