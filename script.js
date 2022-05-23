@@ -14,7 +14,6 @@ function downloadHandler(event) {
         alert('Please fill out form');
         return;
     };
-
     
     const temp = [];
     customers.forEach(function(i, idx, arr){
