@@ -34,9 +34,9 @@ ${temp.join('')}
 </customer-groups>
 `
     let download = document.createElement('a');
-    let bb = new Blob([xmltext], {type: 'text/plain'});
+    let blob = new Blob([xmltext], {type: 'text/plain'});
 
-    download.setAttribute('href', window.URL.createObjectURL(bb));
+    download.setAttribute('href', window.URL.createObjectURL(blob));
     download.setAttribute('download', filename);
     download.setAttribute('id', 'download');
     download.innerHTML = `Click here to download <strong>${filename}</strong>`;
